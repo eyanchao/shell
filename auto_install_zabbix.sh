@@ -2,7 +2,7 @@
 #Zabbix 一键部署脚本
 #Date: 2018/4/13
 #Author: eyanchao
-#Environment：Centos7+nginx+mysql+php
+#Environment：centos7+nginx+mysql+php
 
 ########################NOTICE #########################
 #  安装zabbix3.0.4：依赖php-5.6.25,mysql,nginx or apache#
