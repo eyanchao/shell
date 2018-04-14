@@ -92,4 +92,46 @@ if [ $? -eq 0 ];then
         echo -n "php-fpm启动完毕！"
 fi
 
+#zabbix编译安装
+echo -n "正在导入zabbix数据到mysql数据库中...."
+tar zxf ${src_home}/zabbix-3.0.4.tar.gz
+mysql -uzabbix -pzabbix zabbix < ${src_homie}/zabbix-3.0.4/database/mysql/schema.sql
+mysql -uzabbix -pzabbix zabbix < ${src_homie}/zabbix-3.0.4/database/mysql/images.sql
+mysql -uzabbix -pzabbix zabbix < ${src_homie}/zabbix-3.0.4/database/mysql/data.sql
+if [ $? -eq 0 ];then
+        echo -n "zabbix数据导入启动完毕！"
+fi
+echo -n "正在安装zabbix编译依赖软件包....可能需要几分钟"
+yum -y install net-snmp-devel curl-devel javacc java-1.8*
+echo -n "编译安装Zabbix-server....可能需要几分钟"
+cd ${src_home}/zabbix-3.0.4 && ./configure --prefix=/usr/local/zabbix --enable-server --enable-proxy --enable-agent  --with-net-snmp --with-libcurl --enable-java --with-mysql
+make -j 4 && make install
+
+
+echo -n "正在制作Zabbix-server启动脚本...."
+echo -e "zabbix-agent 10050/tcp #ZabbixAgent\nzabbix-agent 10050/udp #Zabbix Agent\nzabbix-trapper 10051/tcp #ZabbixTrapper\nzabbix-trapper 10051/udp #Zabbix Trapper" >> /etc/services
+cp ${src_home}/zabbix-3.0.4/misc/init.d/fedora/core/zabbix_server /etc/init.d/
+cp ${src_home}/zabbix-3.0.4/misc/init.d/fedora/core/zabbix_agentd /etc/init.d/
+cd
+
+chmod 777 /etc/init.d/zabbix_*
+sed -i '/BASEDIR=/s/$/\/zabbix/' /etc/init.d/zabbix_server
+sed -i '/BASEDIR=/s/$/\/zabbix/' /etc/init.d/zabbix_agentd
+
+echo -n "正在配置zabbix配置文件...."
+cd /usr/local/zabbix/etc
+sed '/# DBHost=localhost/a\DBHost=localhost' zabbix_server.conf -i
+sed '/# DBPassword=/a\DBPassword=zabbix' zabbix_server.conf -i
+sed '/# EnableRemoteCommands=0/a\EnableRemoteCommands=1' zabbix_agentd.conf -i
+sed '/# ListenPort=10050/a\ListenPort=10050' zabbix_agentd.conf -i
+sed '/# User=zabbix/a\User=zabbix' zabbix_agentd.conf -i
+sed '/# AllowRoot=0/a\AllowRoot=1' zabbix_agentd.conf -i
+sed '/# UnsafeUserParameters=0/a\UnsafeUserParameters=1' zabbix_agentd.conf -i
+if [ $? -eq 0 ];then
+        echo -n "zabbix配置完毕！"
+fi
+
+echo -n "正在启动zabbix_server and zabbix_agent...."
+service zabbix_server start
+
 
