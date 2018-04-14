@@ -1,5 +1,4 @@
 #!/bin/bash
-
 #Zabbix 一键部署脚本
 #Date: 2018/4/13
 #Author: eyanchao
