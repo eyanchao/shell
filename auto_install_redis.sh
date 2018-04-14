@@ -1,5 +1,4 @@
 #!/bin/bash
-#安装gcc
 yum install gcc-c++
 #接收参数：redis压缩包绝对路径
 src=$1
