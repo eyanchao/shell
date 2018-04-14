@@ -133,5 +133,43 @@ fi
 
 echo -n "正在启动zabbix_server and zabbix_agent...."
 service zabbix_server start
+service zabbix_agentd start
+chkconfig zabbix_server on
+chkconfig zabbix_agentd on
+cd
+
+echo -n "正在配置nginx反代zabbix...."
+cd /etc/nginx/conf.d/ && mv default.conf default.conf.bak
+cp ${src_home}/zabbix.conf /etc/nginx/conf.d/
+echo -n "配置完成，正在启动nginx web server...."
+service nginx start
+if [ $? -eq 0 ];then
+        echo -n "Nginx启动完毕！"
+fi
+
+echo -n "正在进行最后的zabbix Install ,php参数修改....."
+sed '/^post_max_size =/s/=.*/= 16M/' /etc/php.ini -i
+sed '/^max_execution_time =/s/=.*/= 300/' /etc/php.ini -i
+sed '/^max_input_time =/s/=.*/= 300/' /etc/php.ini -i
+sed -i '/^;date.timezone/a\date.timezone =  Asia/Shanghai' /etc/php.ini
+sed -i '/^;always_populate_raw_post_data.*/a\always_populate_raw_post_data = -1' /etc/php.ini
+sed -i '/^mysqli.default_socket =/s/=.*/= \/var\/lib\/mysql\/mysql.sock/' /etc/php.ini
+echo -n "正在重新启动php服务....."
+/etc/init.d/php-fpm restart
+echo -n "正在初始化zabbix Server...."
+cp ${src_home}/zabbix.conf.php /usr/share/nginx/html/zabbix/conf/
+echo -n "正在做最后的Zabbix Server重启....."
+/etc/init.d/zabbix_server restart
+if [ $? -eq 0 ];then
+        echo -n "Zabbix Server 启动完毕！"
+fi
+
+echo -n "正在解决zabbix server 乱码问题,请你耐心等待....."
+cd /usr/share/nginx/html/zabbix/fonts && mv DejaVuSans.ttf DejaVuSans.ttf.bak
+cp ${src_home}/msyh.ttf .
+cd ../include/ && sed -i 's/DejaVuSans/msyh/g' defines.inc.php
+cd
+echo -n "恭喜你,Zabbix 部署到此完成!"
+
 
 
