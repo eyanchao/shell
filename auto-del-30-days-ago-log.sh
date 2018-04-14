@@ -3,7 +3,9 @@
 #filename: auto-del-30-days-ago-log.sh
 #date: 2016/4/14
 #author: eyanchao
-find /opt/soft/log/ -mtime +30 -name "*.log" -exec rm -rf {} \;
+
+dir= /opt/soft/log/
+find $dir -mtime +30 -name "*.log" -exec rm -rf {} \;
 
 #crontab -e
 #将auto-del-30-days-ago-log.sh执行脚本加入到系统计划任务，到点自动执行
