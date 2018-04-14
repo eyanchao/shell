@@ -1,4 +1,8 @@
 #/bin/bash
+#filename: find_max_file.sh
+#date: 2016/4/14
+#author: eyanchao
+
 a=0
 for  name in *.*
 do
