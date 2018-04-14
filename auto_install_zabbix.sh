@@ -3,6 +3,7 @@
 #Zabbix 一键部署脚本
 #Date: 2018/4/13
 #Author: eyanchao
+#Environment：Centos7
 
 ############## NOTICE ##################
 #  安装zabbix3.0.4,依赖php-5.6.25      #
@@ -49,4 +50,4 @@ fi
 echo -n "正在安装php-5.6.25的编译所需相关软件……"
 yum -y install make gcc nginx  libmcrypt php-mcrypt mysql-server mysql-devel net-snmp-devel libcurl-devel php php-mysql php-bcmath php-mbstring php-gd php-xml bzip2-devel libmcrypt-devel libxml2-devel gd gd-devel libcurl*
 if [ $? -eq 0 ];then
-"auto_install_zabbix.sh" 174L, 7619C
+
