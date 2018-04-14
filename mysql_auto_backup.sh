@@ -34,3 +34,9 @@ then
   #写删除文件日志  
   echo "delete $delfile" >> $backup_dir/log.txt  
 fi  
+
+
+
+
+
+
