@@ -3,10 +3,8 @@
 # date: 2016/4/14
 # author: eyanchao
 # nginx - this script starts and stops the nginx daemon
-#
 # chkconfig:   - 85 15
-# description:  Nginx is an HTTP(S) server, HTTP(S) reverse \
-#               proxy and IMAP/POP3 proxy server
+# description:  Nginx is an HTTP(S) server, HTTP(S) reverse \ proxy and IMAP/POP3 proxy server
 # processname: nginx
 # config:      /etc/nginx/nginx.conf
 # config:      /etc/sysconfig/nginx
