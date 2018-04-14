@@ -1,5 +1,7 @@
 #!/bin/sh
-#
+# filename: nginx_auto_start.sh
+# date: 2016/4/14
+# author: eyanchao
 # nginx - this script starts and stops the nginx daemon
 #
 # chkconfig:   - 85 15
