@@ -9,7 +9,6 @@
 #  安装zabbix3.0.4：依赖php-5.6.25,mysql,nginx or apache#
 ########################################################
 
-
 src_home=`pwd`
 echo -n "正在配置iptables防火墙……"
 
