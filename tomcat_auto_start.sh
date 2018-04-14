@@ -1,5 +1,5 @@
-
-#filename: auto-del-30-days-ago-log.sh
+#!/bin/bash
+#filename: tomcat_auto_start.sh
 #date: 2016/4/14
 #author: eyanchao
 #Used For Linux 
