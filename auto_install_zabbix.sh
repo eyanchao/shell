@@ -42,7 +42,7 @@ echo -n "正在安装epel-release yum源……"
 rpm -Uvh http://mirrors.ustc.edu.cn/epel/epel-release-latest-7.noarch.rpm
 #rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 if [ $? -eq 0 ];then
-        echo -n "epel-release yum 源初始化完毕！"
+        echo -n "epel-release yum源初始化完毕！"
 fi
 
 echo -n "正在安装php-5.6.25的编译所需相关软件……"
