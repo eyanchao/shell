@@ -1,5 +1,8 @@
 
 #!/bin/sh
+#filename: auto_deploy_tomcat.sh
+#date: 2016/4/14
+#author: eyanchao
 
 war=$1
 bin=$(cd `dirname $0`; pwd)
