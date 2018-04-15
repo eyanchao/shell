@@ -1,6 +1,10 @@
 
 #!/bin/bash  
-  
+#filename: mysql_auto_backup.sh
+#date: 2016/4/14
+#author: eyanchao
+#Used For Linux 
+
 #保存备份个数  
 number=3  
 #备份保存路径  
