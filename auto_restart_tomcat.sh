@@ -1,5 +1,3 @@
-
-
 #!/bin/sh
 #filename: auto_restart_tomcat.sh
 #date: 2016/4/14
