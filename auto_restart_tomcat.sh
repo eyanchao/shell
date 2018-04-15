@@ -1,6 +1,9 @@
 
 
 #!/bin/sh
+#filename: auto_restart_tomcat.sh
+#date: 2016/4/14
+#author: eyanchao
 
 bin=$(cd `dirname $0`; pwd)
 pid=$(ps aux | grep tomcat | grep -v grep | grep -v restart | grep ${bin} | awk '{print $2}') 
