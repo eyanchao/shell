@@ -142,7 +142,7 @@ echo -n "正在配置nginx反代zabbix...."
 cd /etc/nginx/conf.d/ && mv default.conf default.conf.bak
 cp ${src_home}/zabbix.conf /etc/nginx/conf.d/
 echo -n "配置完成，正在启动nginx web server...."
-service nginx start
+systemctl start nginx.service
 if [ $? -eq 0 ];then
         echo -n "Nginx启动完毕！"
 fi
