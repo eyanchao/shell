@@ -1,4 +1,7 @@
-#!/bin/sh  
+#!/bin/sh 
+#filename: monitor_redis_memery.sh
+#date: 2016/4/14
+#author: eyanchao
   
 USEDMEMORY_77=$(redis-cli -h 192.168.119.77 info memory | grep used_memory_human: | awk -F ':' '{print $2}')  
 USEDMEMORY_78=$(redis-cli -h 192.168.119.78 info memory | grep used_memory_human: | awk -F ':' '{print $2}')  
