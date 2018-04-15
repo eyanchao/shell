@@ -1,5 +1,5 @@
 #!/bin/bash
-#author: eyanchao
+
  
 mysql -uroot -p123456 -e "select version();" &>/dev/null
 if [ $? -ne 0 ]
