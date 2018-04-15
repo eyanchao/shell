@@ -4,9 +4,9 @@
 #Author: eyanchao
 #Environment：centos7+nginx1.12.2+mysql5.5.26+php
 
-######################## NOTICE ########################
-# 安装zabbix3.4.2：依赖php-5.6.25,mysql,nginx or apache #
-########################################################
+######################## NOTICE #################
+# 安装zabbix3.4.2：依赖php,mysql,nginx or apache #
+#################################################
 
 src_home=`pwd`
 echo -n "正在配置iptables防火墙……"
