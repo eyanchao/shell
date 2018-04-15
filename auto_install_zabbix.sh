@@ -46,7 +46,7 @@ if [ $? -eq 0 ];then
 fi
 
 echo -n "正在安装php-5.6.25的编译所需相关软件……"
-yum -y install make gcc libmcrypt php-mcrypt mysql net-snmp-devel libcurl-devel php php-mysql php-bcmath php-mbstring php-gd php-xml bzip2-devel libmcrypt-devel libxml2-devel gd gd-devel libcurl*
+yum -y install make gcc libmcrypt php-mcrypt mariadb-server mariadb net-snmp-devel libcurl-devel php php-mysql php-bcmath php-mbstring php-gd php-xml bzip2-devel libmcrypt-devel libxml2-devel gd gd-devel libcurl*
 if [ $? -eq 0 ];then
  echo -n "php-5.6.25依赖初始化完毕！"
 fi
