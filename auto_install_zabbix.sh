@@ -58,7 +58,8 @@ useradd -M -s /sbin/nologin zabbix && echo "OK"
 
 
 echo -n "正在启动mysqld服务……"
-service mysqld start
+systemctl enable mariadb 
+systemctl start mariadb
 if [ $? -eq 0 ];then
         echo -n "Mysql启动完毕！"
 fi
