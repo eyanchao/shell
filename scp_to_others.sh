@@ -1,5 +1,8 @@
 #!/bin/bash
-
+#filename: scp_to_others.sh
+#date: 2016/4/14
+#author: eyanchao
+#Used For Linux
 
 DEBUG=true
 debug(){
