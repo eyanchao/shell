@@ -33,8 +33,8 @@ cd $target"/bin"
 systemctl stop firewalld.service
 
 #首先我们需要将redis安装包上传到linux中，将我们编写好的shell脚本与安装包放在同一路径下。 
-#执行shell脚本test.sh,此处传入两个参数：第一个参数是redis安装包绝对路径/home/gaoshanjinag/redis-3.0.0.tar.gz，第二个参数是要安装到的绝对路径 /usr/local/redis 
-#[root@localhost gaoshanjiang]# ./redis-install.sh redis-3.0.0.tar.gz /usr/local/redis
+#执行shell脚本test.sh,此处传入两个参数：第一个参数是redis安装包绝对路径/home/eyanchao/redis-3.0.0.tar.gz，第二个参数是要安装到的绝对路径 /usr/local/redis 
+#[root@localhost eyc]# ./redis-install.sh redis-3.0.0.tar.gz /usr/local/redis
 
 
 
