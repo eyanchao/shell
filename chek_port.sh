@@ -2,6 +2,7 @@
 # filename: chek_port.sh
 # date: 2014/3/13
 # author: eyanchao
+
 n=1
 echo "检查xxx服务..."
 while true
