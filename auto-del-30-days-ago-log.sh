@@ -4,7 +4,6 @@
 #date: 2016/4/14
 #author: eyanchao
 
-
 dir= /opt/soft/log/   #删除指定目录下日志文件
 find $dir -mtime +30 -name "*.log" -exec rm -rf {} \;
 #find /mnt/sdb/backups -mtime +15 -name "*gz*" -exec rm -rf {} \;
