@@ -1,4 +1,6 @@
 #!/bin/bash
+#filename: monitor_mysql_status_3.sh
+#date: 2016/4/14
 #author: eyanchao
  
 port=`netstat -nlt|grep 3306|wc -l`
