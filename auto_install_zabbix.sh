@@ -2,7 +2,7 @@
 #Zabbix 一键部署脚本
 #Date: 2018/4/13
 #Author: eyanchao
-#Environment：centos7+nginx+mysql+php
+#Environment：centos7+nginx1.12.2+mysql5.5.26+php
 
 ######################## NOTICE ########################
 # 安装zabbix3.4.2：依赖php-5.6.25,mysql,nginx or apache #
@@ -46,7 +46,7 @@ if [ $? -eq 0 ];then
 fi
 
 echo -n "正在安装php-5.6.25的编译所需相关软件……"
-yum -y install make gcc nginx  libmcrypt php-mcrypt mysql-server mysql-devel net-snmp-devel libcurl-devel php php-mysql php-bcmath php-mbstring php-gd php-xml bzip2-devel libmcrypt-devel libxml2-devel gd gd-devel libcurl*
+yum -y install make gcc libmcrypt php-mcrypt mysql net-snmp-devel libcurl-devel php php-mysql php-bcmath php-mbstring php-gd php-xml bzip2-devel libmcrypt-devel libxml2-devel gd gd-devel libcurl*
 if [ $? -eq 0 ];then
  echo -n "php-5.6.25依赖初始化完毕！"
 fi
