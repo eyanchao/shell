@@ -1,6 +1,6 @@
 
 #/bin/sh
-
+#
 dir= /data/redis/bin7K/
 
 n=100000000
