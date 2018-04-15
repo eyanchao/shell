@@ -1,5 +1,5 @@
 #!/bin/bash
-#filename: auto-del-30-days-ago-log.sh
+#filename: monitor_mysql_status_4.sh
 #date: 2016/4/14
 #author: eyanchao
  
