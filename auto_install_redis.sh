@@ -1,4 +1,9 @@
 #!/bin/bash
+#filename:auto_install_redis.sh
+#date: 2016/4/14
+#author: eyanchao
+#Used For Linux 
+
 yum install gcc-c++
 #接收参数：redis压缩包绝对路径
 src=$1
