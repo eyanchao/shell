@@ -5,7 +5,7 @@
 #Environment：centos7+nginx+mysql+php
 
 ######################## NOTICE ########################
-# 安装zabbix3.0.4：依赖php-5.6.25,mysql,nginx or apache #
+# 安装zabbix3.4.2：依赖php-5.6.25,mysql,nginx or apache #
 ########################################################
 
 src_home=`pwd`
