@@ -40,7 +40,7 @@ fi
 echo -n "正在安装epel-release yum 源……"
 
 rpm -Uvh http://mirrors.ustc.edu.cn/epel/epel-release-latest-7.noarch.rpm
-#rpm -Uvh
+#rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 if [ $? -eq 0 ];then
         echo -n "epel-release yum 源 初始化完毕！"
 fi
