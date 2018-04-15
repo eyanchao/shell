@@ -1,4 +1,5 @@
 #!/bin/bash
+
 #This script is use for describle CPU Hard Memery Utilization
 total=0
 idle=0
