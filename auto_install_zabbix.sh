@@ -173,3 +173,9 @@ echo -n "恭喜你,Zabbix 部署到此完成!"
 
 
 
+#chmod +x auto_install_zabbix.sh
+#sh auto_install_zabbix.sh
+
+
+
+
