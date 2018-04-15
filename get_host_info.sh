@@ -1,6 +1,6 @@
 
 #!/bin/sh
-#filename: auto-del-30-days-ago-log.sh
+#filename: get_host_info.sh
 #date: 2016/4/14
 #author: eyanchao
 #output example
