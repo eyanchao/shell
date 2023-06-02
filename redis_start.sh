@@ -3,7 +3,7 @@
 #date: 2023/06/02
 #author: ywlx
 
-redis_dir=/opt/redis-6.2.9/src  #这里用的redis版本是6.2.9
+REDIS_DIR=/opt/redis-6.2.9/src  #这里用的redis版本是6.2.9
 #redis服务器监听的端口
 REDISPORT=6379
 
