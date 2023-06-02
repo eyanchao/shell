@@ -1,7 +1,7 @@
 #!/bin/bash
 #filename: auto_pub.sh
 #describe:auto update to publish 
-#author： udax.kr
+#author： eyanchao
 #date: 2018/6/23
 
 $bizservice_war=/opt/udax/bizservice
