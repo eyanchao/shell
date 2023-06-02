@@ -4,10 +4,10 @@
 #author： eyanchao
 #date: 2018/6/23
 
-$bizservice_war=/opt/udax/bizservice
-$bizweb_war=/opt/udax/bizweb
-$bizservice_dir=/opt/apache-tomcat-8.0.52
-$bizweb_dir=/opt/tomcat
+bizservice_war=/opt/udax/bizservice
+bizweb_war=/opt/udax/bizweb
+bizservice_dir=/opt/apache-tomcat-8.0.52
+bizweb_dir=/opt/tomcat
 
 sh $bizservice_dir/shutdown.sh&& sh $bizweb_dir/shutdown.sh
 
