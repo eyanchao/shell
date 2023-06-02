@@ -11,7 +11,7 @@ REDISPORT=6379
 EXEC=$redis_dir/redis-server
 
 #客户端位置
-CLIEXEC=$redis_dir/redis-cli
+CLIEXEC=$REDIS_DIR/redis-cli
 
 #redis的PID文件位置，需要修改
 PIDFILE=/var/run/redis_${REDISPORT}.pid
