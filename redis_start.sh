@@ -37,7 +37,7 @@ case "$1" in
         else
                 PID=$(cat $PIDFILE)
                 echo "Stopping ..."
-                $CLIEXEC -p $REDISPORT -a "pass12345" -p $REDISPORT shutdown   #redis.conf里设置密码的，停止redis前需要预先提供密码，才能停止，这里提供了测试环境的密码。
+                $CLIEXEC -p $REDISPORT -a "pass12345" -p $REDISPORT shutdown   #redis.conf里设置密码的，停止redis前需要预先提供密码后，才能停止，这里提供了测试环境的密码。
                 while [ -x /proc/${PID} ]
                 do
                     echo "Waiting for Redis to shutdown ..."
